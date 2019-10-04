@@ -17,10 +17,22 @@
 
         var passwordLength = parseInt(prompt("How many characters?"));
 
-        var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-        var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        var numbers = "1234567890";
-        var symbols = "!#$%&*+-=?@^_|<>(){}[]:;,.";
+        if (confirm("Lowercase?")) {
+            var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+            allowedChars += lowerCase;
+        }
+        if (confirm("Uppercase?")) {
+            var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            allowedChars += upperCase;
+        }
+        if (confirm("Numbers?")) {
+            var numbers = "1234567890";
+            allowedChars += numbers;
+        }
+        if (confirm("Special Characters?")) {
+            var symbols = "!#$%&*+-=?@^_|<>(){}[]:;,.";
+            allowedChars += symbols;
+        }
 
         for (var i = 0; i < passwordLength; i++) {
             password += allowedChars[Math.floor(Math.random()*allowedChars.length)];
