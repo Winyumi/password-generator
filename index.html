@@ -64,13 +64,14 @@
                         }
                     }
                     password.splice(Math.floor(Math.random()*password.length),0,allowedChars[Math.floor(Math.random()*allowedChars.length)]);
+
+                    console.log(password.join(""), password.length);
                 }
                 // Output the password array as a combined string.
                 output.innerText = password.join("");
             } else {
                 alert("Password was not generated.\nPlease confirm at least one character type.");
             }
-            console.log(password);
         }
         generatePassword();
     </script>
