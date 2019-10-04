@@ -15,7 +15,8 @@
         var allowedChars = lowerCase + upperCase + numbers + symbols;
         var output = document.getElementById("password");
 
-        var passwordLength = prompt("How many characters?");
+        var passwordLength = parseInt(prompt("How many characters?"));
+
         var lowerCase = "abcdefghijklmnopqrstuvwxyz";
         var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         var numbers = "1234567890";
