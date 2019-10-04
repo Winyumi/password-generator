@@ -11,20 +11,19 @@
     <div id="password"></div>
 
     <script>
+        var password = "";
+        var allowedChars = lowerCase + upperCase + numbers + symbols;
+        var output = document.getElementById("password");
+
+        var passwordLength = prompt("How many characters?");
         var lowerCase = "abcdefghijklmnopqrstuvwxyz";
         var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         var numbers = "1234567890";
         var symbols = "!#$%&*+-=?@^_|<>(){}[]:;,.";
-        var passwordLength = prompt("How many characters?");
-
-        var output = document.getElementById("password");
-        var allowedChars = lowerCase + upperCase + numbers + symbols;
-        var password = "";
 
         for (var i = 0; i < passwordLength; i++) {
             password += allowedChars[Math.floor(Math.random()*allowedChars.length)];
         }
-
         output.innerText = password;
     </script>
 </body>
