@@ -11,36 +11,39 @@
     <div id="password"></div>
 
     <script>
-        var password = "";
-        var allowedChars = "";
-        var output = document.getElementById("password");
+        function generatePassword() {
+            var password = "";
+            var allowedChars = "";
+            var output = document.getElementById("password");
 
-        var passwordLength = parseInt(prompt("How many characters? (8-128)"));
-        if (passwordLength < 8 || passwordLength > 128 || Number.isNaN(passwordLength) ) {
-            alert("Please enter a number from 8 to 128.");
-            return;
-        }
-        if (confirm("Lowercase?")) {
-            var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-            allowedChars += lowerCase;
-        }
-        if (confirm("Uppercase?")) {
-            var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            allowedChars += upperCase;
-        }
-        if (confirm("Numbers?")) {
-            var numbers = "1234567890";
-            allowedChars += numbers;
-        }
-        if (confirm("Special Characters?")) {
-            var symbols = "!#$%&*+-=?@^_|<>(){}[]:;,.";
-            allowedChars += symbols;
-        }
+            var passwordLength = parseInt(prompt("How many characters? (8-128)"));
+            if (passwordLength < 8 || passwordLength > 128 || Number.isNaN(passwordLength) ) {
+                alert("Please enter a number from 8 to 128.");
+                return;
+            }
+            if (confirm("Lowercase?")) {
+                var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+                allowedChars += lowerCase;
+            }
+            if (confirm("Uppercase?")) {
+                var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                allowedChars += upperCase;
+            }
+            if (confirm("Numbers?")) {
+                var numbers = "1234567890";
+                allowedChars += numbers;
+            }
+            if (confirm("Special Characters?")) {
+                var symbols = "!#$%&*+-=?@^_|<>(){}[]:;,.";
+                allowedChars += symbols;
+            }
 
-        for (var i = 0; i < passwordLength; i++) {
-            password += allowedChars[Math.floor(Math.random()*allowedChars.length)];
+            for (var i = 0; i < passwordLength; i++) {
+                password += allowedChars[Math.floor(Math.random()*allowedChars.length)];
+            }
+            output.innerText = password;
         }
-        output.innerText = password;
+        generatePassword();
     </script>
 </body>
 </html>
