@@ -38,28 +38,32 @@
                 allowedChars += symbols;
             }
 
-            for (var i = 0; i < passwordLength; i++) {
-                if (i === 0) {
-                    if (lowerCase) {
-                        password.splice(Math.floor(Math.random()*password.length),0,lowerCase[Math.floor(Math.random()*lowerCase.length)])
-                        i++;
+            if (allowedChars) {
+                for (var i = 0; i < passwordLength; i++) {
+                    if (i === 0) {
+                        if (lowerCase) {
+                            password.splice(Math.floor(Math.random()*password.length),0,lowerCase[Math.floor(Math.random()*lowerCase.length)])
+                            i++;
+                        }
+                        if (upperCase) {
+                            password.splice(Math.floor(Math.random()*password.length),0,upperCase[Math.floor(Math.random()*upperCase.length)])
+                            i++;
+                        }
+                        if (numbers) {
+                            password.splice(Math.floor(Math.random()*password.length),0,numbers[Math.floor(Math.random()*numbers.length)])
+                            i++;
+                        }
+                        if (symbols) {
+                            password.splice(Math.floor(Math.random()*password.length),0,symbols[Math.floor(Math.random()*symbols.length)])
+                            i++;
+                        }
                     }
-                    if (upperCase) {
-                        password.splice(Math.floor(Math.random()*password.length),0,upperCase[Math.floor(Math.random()*upperCase.length)])
-                        i++;
-                    }
-                    if (numbers) {
-                        password.splice(Math.floor(Math.random()*password.length),0,numbers[Math.floor(Math.random()*numbers.length)])
-                        i++;
-                    }
-                    if (symbols) {
-                        password.splice(Math.floor(Math.random()*password.length),0,symbols[Math.floor(Math.random()*symbols.length)])
-                        i++;
-                    }
+                    password.splice(Math.floor(Math.random()*password.length),0,allowedChars[Math.floor(Math.random()*allowedChars.length)]);
                 }
-                password.splice(Math.floor(Math.random()*password.length),0,allowedChars[Math.floor(Math.random()*allowedChars.length)]);
+                output.innerText = password.join("");
+            } else {
+                alert("Password was not generated.\nPlease confirm at least one character type.");
             }
-            output.innerText = password.join("");
         }
         generatePassword();
     </script>
