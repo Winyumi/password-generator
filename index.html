@@ -19,7 +19,7 @@
             var output = document.getElementById("password");
 
             // Prompt the user for options.
-            var passwordLength = parseInt(prompt("How many characters? (8-128)"));
+            var passwordLength = parseInt(prompt("How many characters? (8-128)",8));
             if (!(passwordLength >= 8 && passwordLength <= 128)) {
                 alert("Please enter a number from 8 to 128.");
                 return;
