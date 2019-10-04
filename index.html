@@ -15,8 +15,11 @@
         var allowedChars = "";
         var output = document.getElementById("password");
 
-        var passwordLength = parseInt(prompt("How many characters?"));
-
+        var passwordLength = parseInt(prompt("How many characters? (8-128)"));
+        if (passwordLength < 8 || passwordLength > 128 || Number.isNaN(passwordLength) ) {
+            alert("Please enter a number from 8 to 128.");
+            return;
+        }
         if (confirm("Lowercase?")) {
             var lowerCase = "abcdefghijklmnopqrstuvwxyz";
             allowedChars += lowerCase;
