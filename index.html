@@ -12,10 +12,12 @@
 
     <script>
         function generatePassword() {
+            // Set up initial variables.
             var password = [];
             var allowedChars = "";
             var output = document.getElementById("password");
 
+            // Prompt the user for options.
             var passwordLength = parseInt(prompt("How many characters? (8-128)"));
             if (passwordLength < 8 || passwordLength > 128 || Number.isNaN(passwordLength) ) {
                 alert("Please enter a number from 8 to 128.");
@@ -38,8 +40,10 @@
                 allowedChars += symbols;
             }
 
+            // Check if any character types are selected.
             if (allowedChars) {
                 for (var i = 0; i < passwordLength; i++) {
+                    // Include at least one of each selected character types then generate the rest of the characters at random. Each character is spliced into the password array at a random position.
                     if (i === 0) {
                         if (lowerCase) {
                             password.splice(Math.floor(Math.random()*password.length),0,lowerCase[Math.floor(Math.random()*lowerCase.length)])
@@ -60,6 +64,7 @@
                     }
                     password.splice(Math.floor(Math.random()*password.length),0,allowedChars[Math.floor(Math.random()*allowedChars.length)]);
                 }
+                // Output the password array as a combined string.
                 output.innerText = password.join("");
             } else {
                 alert("Password was not generated.\nPlease confirm at least one character type.");
