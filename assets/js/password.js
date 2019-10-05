@@ -1,9 +1,12 @@
+// Get text field for output.
+var output = document.getElementById("password");
+
+
 function generatePassword() {
 
     // Set up initial variables.
     var password = [];
     var allowedChars = "";
-    var output = document.getElementById("password");
 
     // Prompt the user for options.
     var passwordLength = parseInt(prompt("How many characters? (8-128)",8));
@@ -67,4 +70,17 @@ function generatePassword() {
     }
 
 }
-generatePassword();
+
+function copyPassword() {
+
+    // Select text
+    output.select();
+    output.setSelectionRange(0, 99999); // For mobile support
+
+    // Copy text
+    document.execCommand("copy");
+
+    // Notify user
+    alert("Copied password to clipboard.");
+
+}
