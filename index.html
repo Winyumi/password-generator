@@ -19,16 +19,20 @@
     </header>
     <main>
         <div class="container">
-            <div class="row">
-                <div class="col">
-                    <section>
-                        <h2>Generate a Password</h2>
-                        <textarea id="password" placeholder="Your Secure Password" readonly></textarea>
-                        <button id="generate" onclick="generatePassword()">Generate Password</button>
-                        <button id="copy" onclick="copyPassword()">Copy to Clipboard</button>
-                    </section>
+            <section>
+                <div class="form-group">
+                    <h2>Generate a Password</h2>
+                    <textarea id="password" class="form-control" placeholder="Your Secure Password" readonly></textarea>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="col text-left">
+                        <button id="generate" class="btn btn-primary" onclick="generatePassword()">Generate Password</button>
+                    </div>
+                    <div class="col text-right">
+                        <button id="copy" class="btn btn-primary" onclick="copyPassword()">Copy to Clipboard</button>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 </body>
