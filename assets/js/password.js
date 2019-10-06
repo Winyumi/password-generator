@@ -81,6 +81,6 @@ function copyPassword() {
     document.execCommand("copy");
 
     // Notify user
-    alert("Copied password to clipboard.");
+    alert("Password has been copied to the clipboard.");
 
 }
