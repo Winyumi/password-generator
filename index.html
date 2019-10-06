@@ -13,23 +13,23 @@
 </head>
 <body>
     <header>
-        <div class="container text-center">
+        <div class="container-fluid text-center">
             <h1>Password Generator</h1>
         </div>
     </header>
     <main>
-        <div class="container">
+        <div class="container-fluid">
             <section>
                 <div class="form-group">
-                    <h2>Generate a Password</h2>
+                    <h2 class="text-center">Generate a Password</h2>
                     <textarea id="password" class="form-control" placeholder="Your Secure Password" readonly></textarea>
                 </div>
                 <div class="row">
-                    <div class="col text-left">
+                    <div class="col-sm text-center text-sm-left form-group">
                         <button id="generate" class="btn btn-primary" onclick="generatePassword()">Generate Password</button>
                     </div>
-                    <div class="col text-right">
-                        <button id="copy" class="btn btn-primary" onclick="copyPassword()">Copy to Clipboard</button>
+                    <div class="col-sm text-center text-sm-right form-group">
+                        <button id="copy" class="btn btn-light" onclick="copyPassword()">Copy to Clipboard</button>
                     </div>
                 </div>
             </section>
