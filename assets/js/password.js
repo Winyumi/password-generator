@@ -1,6 +1,10 @@
 // Get text field for output
 var output = document.getElementById("password");
 
+// Set up button events
+document.getElementById("generate").addEventListener("click", generatePassword);
+document.getElementById("copy").addEventListener("click", copyPassword);
+
 
 function generatePassword() {
 
