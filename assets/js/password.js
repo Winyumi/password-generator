@@ -19,12 +19,12 @@ function generatePassword() {
         return;
     }
     if (confirm("Include lowercase characters?")) {
-        var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-        allowedChars += lowerCase;
+        var lowercase = "abcdefghijklmnopqrstuvwxyz";
+        allowedChars += lowercase;
     }
     if (confirm("Include uppercase characters?")) {
-        var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        allowedChars += upperCase;
+        var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        allowedChars += uppercase;
     }
     if (confirm("Include numeric characters?")) {
         var numbers = "1234567890";
@@ -41,12 +41,12 @@ function generatePassword() {
         for (var i = 0; i < passwordLength; i++) {
             // Include at least one of each selected character types at the first step
             if (i === 0) {
-                if (lowerCase) {
-                    password.splice(Math.round(Math.random()*password.length),0,lowerCase[Math.floor(Math.random()*lowerCase.length)])
+                if (lowercase) {
+                    password.splice(Math.round(Math.random()*password.length),0,lowercase[Math.floor(Math.random()*lowercase.length)])
                     i++;
                 }
-                if (upperCase) {
-                    password.splice(Math.round(Math.random()*password.length),0,upperCase[Math.floor(Math.random()*upperCase.length)])
+                if (uppercase) {
+                    password.splice(Math.round(Math.random()*password.length),0,uppercase[Math.floor(Math.random()*uppercase.length)])
                     i++;
                 }
                 if (numbers) {
