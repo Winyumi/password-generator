@@ -62,7 +62,7 @@ function generatePassword() {
             password.splice(Math.round(Math.random()*password.length),0,allowedChars[Math.floor(Math.random()*allowedChars.length)]);
 
             // For debugging purposes
-            console.log(password.join(""), password.length);
+            // console.log(password.join(""), password.length);
         }
 
         // Output the password array as a combined string
