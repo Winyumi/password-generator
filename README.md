@@ -4,6 +4,8 @@
 
 Don't settle for weak passwords! This handy application can quickly and effortlessly generate strong passwords for you to better ensure the security of your sensitive data.
 
+Live Demo: https://winyumi.github.io/password-generator/
+
 ## Usage
 
 1. Click on **Generate Password**.
