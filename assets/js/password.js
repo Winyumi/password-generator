@@ -1,14 +1,14 @@
-// Get text field for output.
+// Get text field for output
 var output = document.getElementById("password");
 
 
 function generatePassword() {
 
-    // Set up initial variables.
+    // Set up initial variables
     var password = [];
     var allowedChars = "";
 
-    // Prompt the user for options.
+    // Prompt the user for options
     var passwordLength = parseInt(prompt("How many characters? (8-128)",8));
     if (!(passwordLength >= 8 && passwordLength <= 128)) {
         alert("Please enter a number from 8 to 128.");
@@ -31,11 +31,11 @@ function generatePassword() {
         allowedChars += symbols;
     }
 
-    // Check if any character types are selected.
+    // Check if any character types are selected
     if (allowedChars) {
-        // Loop each character to be randomized and spliced into the password array at a random position.
+        // Loop each character to be randomized and spliced into the password array at a random position
         for (var i = 0; i < passwordLength; i++) {
-            // Include at least one of each selected character types at the first step.
+            // Include at least one of each selected character types at the first step
             if (i === 0) {
                 if (lowerCase) {
                     password.splice(Math.round(Math.random()*password.length),0,lowerCase[Math.floor(Math.random()*lowerCase.length)])
@@ -54,13 +54,13 @@ function generatePassword() {
                     i++;
                 }
             }
-            // Generate the rest of the characters at random.
+            // Generate the rest of the characters at random
             password.splice(Math.round(Math.random()*password.length),0,allowedChars[Math.floor(Math.random()*allowedChars.length)]);
 
             console.log(password.join(""), password.length);
         }
 
-        // Output the password array as a combined string.
+        // Output the password array as a combined string
         output.innerText = password.join("");
 
     } else {
