@@ -5,14 +5,14 @@ var output = document.getElementById("password");
 document.getElementById("generate").addEventListener("click", generatePassword);
 document.getElementById("copy").addEventListener("click", copyPassword);
 
-
+// Function to generates a password
 function generatePassword() {
 
     // Set up initial variables
     var password = [];
     var allowedChars = "";
 
-    // Prompt the user for options
+    // Prompt the user for character length and type options
     var passwordLength = parseInt(prompt("How many characters? (8-128)",8));
     if (!(passwordLength >= 8 && passwordLength <= 128)) {
         alert("Please enter a number from 8 to 128.");
@@ -61,6 +61,7 @@ function generatePassword() {
             // Generate the rest of the characters at random
             password.splice(Math.round(Math.random()*password.length),0,allowedChars[Math.floor(Math.random()*allowedChars.length)]);
 
+            // For debugging purposes
             console.log(password.join(""), password.length);
         }
 
@@ -69,12 +70,14 @@ function generatePassword() {
 
     } else {
 
+        // Notify user
         alert("Password was not generated.\nPlease confirm at least one character type.");
 
     }
 
 }
 
+// Function to copy the password to the clipboard
 function copyPassword() {
 
     // Select text
