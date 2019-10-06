@@ -5,7 +5,7 @@ var output = document.getElementById("password");
 document.getElementById("generate").addEventListener("click", generatePassword);
 document.getElementById("copy").addEventListener("click", copyPassword);
 
-// Function to generates a password
+// Function to generate a password
 function generatePassword() {
 
     // Set up initial variables
