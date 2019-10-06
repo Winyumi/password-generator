@@ -11,10 +11,10 @@ Don't settle for weak passwords! This handy application can quickly and effortle
 2. Choose a password length from 8 to 128 characters.
 
 3. Confirm to include at least one of the following character types:
-  - Lowercase characters
-  - Uppercase characters
-  - Numeric characters
-  - Special characters
+    - Lowercase characters
+    - Uppercase characters
+    - Numeric characters
+    - Special characters
 
 4. Your password has been generated!
 
