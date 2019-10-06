@@ -14,19 +14,19 @@ function generatePassword() {
         alert("Please enter a number from 8 to 128.");
         return;
     }
-    if (confirm("Lowercase?")) {
+    if (confirm("Include lowercase characters?")) {
         var lowerCase = "abcdefghijklmnopqrstuvwxyz";
         allowedChars += lowerCase;
     }
-    if (confirm("Uppercase?")) {
+    if (confirm("Include uppercase characters?")) {
         var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         allowedChars += upperCase;
     }
-    if (confirm("Numbers?")) {
+    if (confirm("Include numeric characters?")) {
         var numbers = "1234567890";
         allowedChars += numbers;
     }
-    if (confirm("Special Characters?")) {
+    if (confirm("Include special characters?")) {
         var symbols = "!#$%&*+-=?@^_|<>(){}[]:;,.";
         allowedChars += symbols;
     }
